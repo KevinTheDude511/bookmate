@@ -36,6 +36,7 @@
 <body>
 <?php
 include("connect.php");
+session_start();
 ?>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -58,24 +59,36 @@ include("connect.php");
                         <div class="col-sm-6 col-xs-12">
                             <div class="top-link clearfix">
                                 <ul class="link f-right">
-                                    <li>
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>
-                                            My Account
-                                        </a>
-                                    </li>
+                                    <?php
+                                        if(isset($_SESSION["username"]))
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="my-account.php">
+                                                    <i class="zmdi zmdi-account"></i>
+                                                    My Account
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                        else
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="login.php">
+                                                    <i class="zmdi zmdi-lock"></i>
+                                                    Login
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                    ?>
                                     <!--<li>
                                         <a href="wishlist.html">
                                             <i class="zmdi zmdi-favorite"></i>
                                             Wish List (0)
                                         </a>
                                     </li>-->
-                                    <li>
-                                        <a href="#">
-                                            <i class="zmdi zmdi-lock"></i>
-                                            Login
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -733,7 +746,7 @@ include("connect.php");
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="breadcrumbs-inner">
-                                <h1 class="breadcrumbs-title">Book Detail</h1>
+                                <h1 class="breadcrumbs-title"></h1>
                                 <ul class="breadcrumb-list">
                                     <li><a href="index.php">Home</a></li>
                                     <li>Book Detail</li>
@@ -1036,20 +1049,6 @@ include("connect.php");
                             </div>
                         </div>
                         <div class="col-md-3 col-xs-12">
-                            <!-- filter -->
-                            <aside class="widget operating-system box-shadow mb-30">
-                                <h6 class="widget-title border-left mb-20">book filter</h6>
-                                <form action="#">
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Ngôn Tình</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Phiêu Lưu</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Hư Cấu</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Sách Thiếu Nhi</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Toán Học</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Tiểu Thuyết</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Truyện Dài</label><br>
-                                    <label class="mb-0"><input type="checkbox" name="operating-1" value="phone-1">Trinh Thám</label><br>
-                                </form>
-                            </aside>
                             <!-- widget-product -->
                             <aside class="widget widget-product box-shadow">
                                 <h6 class="widget-title border-left mb-20">Newest books</h6>

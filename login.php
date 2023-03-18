@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Subash || Login</title>
+    <title>Login</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -49,13 +49,13 @@
                     <div class="row">
                         <div class="col-sm-6 hidden-xs">
                             <div class="call-us">
-                                <p class="mb-0 roboto">(+88) 01234-567890</p>
+                                <!--<p class="mb-0 roboto">(+88) 01234-567890</p>-->
                             </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                             <div class="top-link clearfix">
                                 <ul class="link f-right">
-                                    <li>
+                                    <!--<li>
                                         <a href="my-account.html">
                                             <i class="zmdi zmdi-account"></i>
                                             My Account
@@ -66,7 +66,7 @@
                                             <i class="zmdi zmdi-favorite"></i>
                                             Wish List (0)
                                         </a>
-                                    </li>
+                                    </li>-->
                                     <li>
                                         <a href="login.html">
                                             <i class="zmdi zmdi-lock"></i>
@@ -87,7 +87,7 @@
                             <!-- logo -->
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img src="img/logo/logo.png" alt="main logo">
                                     </a>
                                 </div>
@@ -96,8 +96,8 @@
                             <div class="col-md-8 hidden-sm hidden-xs">
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
-                                        <li><a href="index.html">Home</a>
-                                            <ul class="dropdwn">
+                                        <li><a href="index.php">Home</a>
+                                            <!--<ul class="dropdwn">
                                                 <li>
                                                     <a href="index.html">Home Version 1</a>
                                                 </li>
@@ -128,9 +128,9 @@
                                                 <li>
                                                     <a href="index-10.html">Home 10 Boxed-2</a>
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                         </li>
-                                        <li class="mega-parent"><a href="#">elements</a>
+                                        <!--<li class="mega-parent"><a href="#">elements</a>
                                             <div class="mega-menu-area clearfix">
                                                 <div class="mega-menu-link mega-menu-link-4  f-left">
                                                     <ul class="single-mega-item">
@@ -448,21 +448,21 @@
                                                     <a href="single-blog.html">Blog Details</a>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li>-->
                                         <li>
                                             <a href="about.html">About us</a>
                                         </li>
-                                        <li>
+                                        <!--<li>
                                             <a href="contact.html">Contact</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </nav>
                             </div>
                             <!-- header-search & total-cart -->
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="search-top-cart  f-right">
+                            <!--<div class="col-md-2 col-sm-6 col-xs-12">
+                                <div class="search-top-cart  f-right">-->
                                     <!-- header-search -->
-                                    <div class="header-search f-left">
+                                    <!--<div class="header-search f-left">
                                         <div class="header-search-inner">
                                            <button class="search-toggle">
                                             <i class="zmdi zmdi-search"></i>
@@ -476,9 +476,9 @@
                                                 </div>
                                             </form> 
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- total-cart -->
-                                    <div class="total-cart f-left">
+                                    <!--<div class="total-cart f-left">
                                         <div class="total-cart-in">
                                             <div class="cart-toggler">
                                                 <a href="#">
@@ -495,9 +495,9 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="total-cart-pro">
+                                                    <div class="total-cart-pro">-->
                                                         <!-- single-cart -->
-                                                        <div class="single-cart clearfix">
+                                                        <!--<div class="single-cart clearfix">
                                                             <div class="cart-img f-left">
                                                                 <a href="#">
                                                                     <img src="img/cart/1.jpg" alt="Cart Product" />
@@ -522,9 +522,9 @@
                                                                     <span>Color <strong>:</strong></span>Black, White
                                                                 </p>
                                                             </div>
-                                                        </div>
+                                                        </div>-->
                                                         <!-- single-cart -->
-                                                        <div class="single-cart clearfix">
+                                                        <!--<div class="single-cart clearfix">
                                                             <div class="cart-img f-left">
                                                                 <a href="#">
                                                                     <img src="img/cart/1.jpg" alt="Cart Product" />
@@ -578,7 +578,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -587,7 +587,7 @@
         <!-- END HEADER AREA -->
 
         <!-- START MOBILE MENU AREA -->
-        <div class="mobile-menu-area hidden-lg hidden-md">
+        <!--<div class="mobile-menu-area hidden-lg hidden-md">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -720,7 +720,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- END MOBILE MENU AREA -->
 
         <!-- BREADCRUMBS SETCTION START -->
@@ -730,9 +730,9 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="breadcrumbs-inner">
-                                <h1 class="breadcrumbs-title">Login / Register</h1>
+                                <h1 class="breadcrumbs-title"></h1>
                                 <ul class="breadcrumb-list">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li>Login / Register</li>
                                 </ul>
                             </div>
@@ -752,13 +752,19 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="registered-customers">
-                                <h6 class="widget-title border-left mb-50">REGISTERED CUSTOMERS</h6>
-                                <form action="#">
+                                <h6 class="widget-title border-left mb-50">LOGIN</h6>
+                                <form action="login-verify.php" method="post" >
                                     <div class="login-account p-30 box-shadow">
                                         <p>If you have an account with us, Please log in.</p>
-                                        <input type="text" name="name" placeholder="Email Address">
+                                        <?php
+                                            if(isset($_GET["err"]))
+                                            {
+                                                echo "<p>Wrong username or password, please try again.</p>";
+                                            }
+                                        ?>
+                                        <input type="text" name="username" placeholder="Username">
                                         <input type="password" name="password" placeholder="Password">
-                                        <p><small><a href="#">Forgot our password?</a></small></p>
+                                        <p><small><a href="#">Forgot your password?</a></small></p>
                                         <button class="submit-btn-1 btn-hover-1" type="submit">login</button>
                                     </div>
                                 </form>
@@ -768,7 +774,7 @@
                         <div class="col-md-6">
                             <div class="new-customers">
                                 <form action="#">
-                                    <h6 class="widget-title border-left mb-50">NEW CUSTOMERS</h6>
+                                    <h6 class="widget-title border-left mb-50">NEW BOOKMATE</h6>
                                     <div class="login-account p-30 box-shadow">
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -777,7 +783,7 @@
                                             <div class="col-sm-6">
                                                 <input type="text"  placeholder="last Name">
                                             </div>
-                                            <div class="col-sm-6">
+                                            <!--<div class="col-sm-6">
                                                 <select class="custom-select">
                                                     <option value="defalt">country</option>
                                                     <option value="c-1">Australia</option>
@@ -794,8 +800,8 @@
                                                     <option value="c-3">New York</option>
                                                     <option value="c-4">London</option>
                                                 </select>
-                                            </div>
-                                            <div class="col-sm-6">
+                                            </div>-->
+                                            <!--<div class="col-sm-6">
                                                 <select class="custom-select">
                                                     <option value="defalt">Town/City</option>
                                                     <option value="c-1">Victoria</option>
@@ -806,13 +812,13 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text"  placeholder="Phone here...">
-                                            </div>
+                                            </div>-->
                                         </div>
-                                        <input type="text"  placeholder="Company neme here...">
+                                        <!--<input type="text"  placeholder="Company neme here...">-->
                                         <input type="text"  placeholder="Email address here...">
                                         <input type="password"  placeholder="Password">
                                         <input type="password"  placeholder="Confirm Password">
-                                        <div class="checkbox">
+                                        <!--<div class="checkbox">
                                             <label class="mr-10"> 
                                                 <small>
                                                     <input type="checkbox" name="signup">Sign up for our newsletter!
@@ -823,7 +829,7 @@
                                                     <input type="checkbox" name="signup">Receive special offers from our partners!
                                                 </small>
                                             </label>
-                                        </div>
+                                        </div>-->
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Register</button>
@@ -851,16 +857,20 @@
                     <div class="plr-185">
                         <div class="footer-top-inner gray-bg">
                             <div class="row">
-                                <div class="col-lg-4 col-md-5 col-sm-4">
+                                <div class="col-lg-7 col-md-5 col-sm-4">
                                     <div class="single-footer footer-about">
                                         <div class="footer-logo">
-                                            <img src="img/logo/logo.png" alt="">
+                                            <img src="img/logo/logo.png" alt="" width="200" height="80">
                                         </div>
                                         <div class="footer-brief">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the subas industry's standard dummy text ever since the 1500s,</p>
-                                            <p>When an unknown printer took a galley of type and If you are going to use a passage of Lorem Ipsum scrambled it to make.</p>
+                                            <p>Sign up now to become a member. We would love to meet you.</p>
+                                            <p>Being a member of BookMate means that:</p>
+                                            <p>- You can freely express your love for books.</p>
+                                            <p>- You have a chance to gain access to your desired books.</p>
+                                            <p>- You can find a like-minded friend to talk to.</p>
+                                            <p>- You can exchange books with another member who is near you.</p>
                                         </div>
-                                        <ul class="footer-social">
+                                        <!--<ul class="footer-social">
                                             <li>
                                                 <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                             </li>
@@ -873,12 +883,12 @@
                                             <li>
                                                 <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
-                                <div class="col-lg-2 hidden-md hidden-sm">
+                                <div class="col-lg-3 hidden-md hidden-sm">
                                     <div class="single-footer">
-                                        <h4 class="footer-title border-left">Shipping</h4>
+                                        <!--<h4 class="footer-title border-left">Shipping</h4>
                                         <ul class="footer-menu">
                                             <li>
                                                 <a href="#"><i class="zmdi zmdi-circle"></i><span>New Products</span></a>
@@ -901,35 +911,35 @@
                                             <li>
                                                 <a href="#"><i class="zmdi zmdi-circle"></i><span>Special Products</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-3 col-sm-4">
                                     <div class="single-footer">
-                                        <h4 class="footer-title border-left">my account</h4>
+                                        <!--<h4 class="footer-title border-left">my account</h4>
                                         <ul class="footer-menu">
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>My Account</span></a>
+                                                <a href="my-account.html"><i class="zmdi zmdi-circle"></i><span>My Account</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
+                                                <a href="wishlist.html"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
+                                                <a href="cart.html"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
+                                                <a href="login.html"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
+                                                <a href="login.html"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Check out</span></a>
+                                                <a href="checkout.html"><i class="zmdi zmdi-circle"></i><span>Check out</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Oder Complete</span></a>
+                                                <a href="order.html"><i class="zmdi zmdi-circle"></i><span>Oder Complete</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -957,11 +967,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="copyright-text">
-                                        <p>&copy; <a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank">CodeCarnival</a> 2016. All Rights Reserved.</p>
+                                        <!--<p>&copy; <a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank">CodeCarnival</a> 2016. All Rights Reserved.</p>-->
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
-                                    <ul class="footer-payment text-right">
+                                    <!--<ul class="footer-payment text-right">
                                         <li>
                                             <a href="#"><img src="img/payment/1.jpg" alt=""></a>
                                         </li>
@@ -974,7 +984,7 @@
                                         <li>
                                             <a href="#"><img src="img/payment/4.jpg" alt=""></a>
                                         </li>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                             </div>
                         </div>

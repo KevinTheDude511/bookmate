@@ -36,6 +36,7 @@
 <body>
 <?php
 include("connect.php");
+session_start();
 ?>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -58,22 +59,34 @@ include("connect.php");
                         <div class="col-sm-6 col-xs-12">
                             <div class="top-link clearfix">
                                 <ul class="link f-right">
-                                    <li>
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>
-                                            My Account
-                                        </a>
-                                    </li>
-                                    <li>
+                                    <?php
+                                        if(isset($_SESSION["username"]))
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="my-account.php">
+                                                    <i class="zmdi zmdi-account"></i>
+                                                    My Account
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                        else
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="login.php">
+                                                    <i class="zmdi zmdi-lock"></i>
+                                                    Login
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                    ?>
+                                    <!--<li>
                                         <a href="wishlist.html">
                                             <i class="zmdi zmdi-favorite"></i>
                                             Wish List (0)
-                                        </a>
-                                    </li>
-                                    <!--<li>
-                                        <a href="login.php">
-                                            <i class="zmdi zmdi-lock"></i>
-                                            Login
                                         </a>
                                     </li>-->
                                 </ul>
@@ -803,7 +816,7 @@ include("connect.php");
                                     <!-- product-item start -->
                                     <?php
                                         $book_amount = 8;
-                                        $high_rating_query = mysqli_query($link, "SELECT bookID, name, ratingScore, ratingNum, reviewNum, imgURL FROM book ORDER BY ratingScore DESC LIMIT $book_amount");
+                                        $high_rating_query = mysqli_query($link, "SELECT bookID, name, ratingScore, ratingNum, reviewNum, imgURL, uploadUser FROM book ORDER BY ratingScore DESC LIMIT $book_amount");
                                         while($high_rating = mysqli_fetch_array($high_rating_query))
                                         {
                                     ?>
@@ -852,7 +865,7 @@ include("connect.php");
                                                         }
                                                     ?>
                                                 </div>
-                                                <h3 class="pro-price"><?php echo $high_rating["ratingNum"]; ?> Ratings | <?php echo $high_rating["reviewNum"]; ?> Reviews</h3>
+                                                <h3 class="pro-price">Upload by: <?php echo $high_rating["uploadUser"]; ?></h3>
                                                 <ul class="action-button">
                                                     <li>
                                                         <a href="#" title="Get Book"><i class="zmdi zmdi-favorite"></i></a>
@@ -880,7 +893,7 @@ include("connect.php");
                                 <div class="row">
                                     <!-- product-item start -->
                                     <?php
-                                        $new_book_query = mysqli_query($link, "SELECT bookID, name, ratingScore, ratingNum, reviewNum, imgURL FROM book ORDER BY uploadDate DESC LIMIT $book_amount");
+                                        $new_book_query = mysqli_query($link, "SELECT bookID, name, ratingScore, ratingNum, reviewNum, imgURL, uploadUser FROM book ORDER BY uploadDate DESC LIMIT $book_amount");
                                         while($new_book = mysqli_fetch_array($new_book_query))
                                         {
                                     ?>
@@ -929,7 +942,7 @@ include("connect.php");
                                                         }
                                                     ?>
                                                 </div>
-                                                <h3 class="pro-price"><?php echo $new_book["ratingNum"]; ?> Ratings | <?php echo $new_book["reviewNum"]; ?> Reviews</h3>
+                                                <h3 class="pro-price">Upload by: <?php echo $new_book["uploadUser"]; ?></h3>
                                                 <ul class="action-button">
                                                     <li>
                                                         <a href="#" title="Get Book"><i class="zmdi zmdi-favorite"></i></a>
@@ -951,7 +964,7 @@ include("connect.php");
                                 <div class="row">
                                     <!-- product-item start -->
                                     <?php
-                                        $most_reviewed_query = mysqli_query($link, "SELECT bookID, name, ratingScore, ratingNum, reviewNum, imgURL FROM book ORDER BY reviewNum DESC LIMIT $book_amount");
+                                        $most_reviewed_query = mysqli_query($link, "SELECT bookID, name, ratingScore, ratingNum, reviewNum, imgURL, uploadUser FROM book ORDER BY reviewNum DESC LIMIT $book_amount");
                                         while($most_reviewed = mysqli_fetch_array($most_reviewed_query))
                                         {
                                     ?>
@@ -1000,7 +1013,7 @@ include("connect.php");
                                                         }
                                                     ?>
                                                 </div>
-                                                <h3 class="pro-price"><?php echo $most_reviewed["ratingNum"]; ?> Ratings | <?php echo $most_reviewed["reviewNum"]; ?> Reviews</h3>
+                                                <h3 class="pro-price">Upload by: <?php echo $most_reviewed["uploadUser"]; ?></h3>
                                                 <ul class="action-button">
                                                     <li>
                                                         <a href="#" title="Get Book"><i class="zmdi zmdi-favorite"></i></a>

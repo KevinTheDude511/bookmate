@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Subash || My Account</title>
+    <title>My Account</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,6 +34,9 @@
 </head>
 
 <body>
+<?php
+    session_start();
+?>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->  
@@ -49,19 +52,37 @@
                     <div class="row">
                         <div class="col-sm-6 hidden-xs">
                             <div class="call-us">
-                                <p class="mb-0 roboto">(+88) 01234-567890</p>
+                                <!--<p class="mb-0 roboto">(+88) 01234-567890</p>-->
                             </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                             <div class="top-link clearfix">
                                 <ul class="link f-right">
-                                    <li>
-                                        <a href="my-account.html">
-                                            <i class="zmdi zmdi-account"></i>
-                                            My Account
-                                        </a>
-                                    </li>
-                                    <li>
+                                    <?php
+                                        if(isset($_SESSION["username"]))
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="my-account.php">
+                                                    <i class="zmdi zmdi-account"></i>
+                                                    My Account
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                        else
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="login.php">
+                                                    <i class="zmdi zmdi-lock"></i>
+                                                    Login
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                    ?>
+                                    <!--<li>
                                         <a href="wishlist.html">
                                             <i class="zmdi zmdi-favorite"></i>
                                             Wish List (0)
@@ -72,7 +93,7 @@
                                             <i class="zmdi zmdi-lock"></i>
                                             Login
                                         </a>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                         </div>
@@ -87,7 +108,7 @@
                             <!-- logo -->
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img src="img/logo/logo.png" alt="main logo">
                                     </a>
                                 </div>
@@ -96,8 +117,8 @@
                             <div class="col-md-8 hidden-sm hidden-xs">
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
-                                        <li><a href="index.html">Home</a>
-                                            <ul class="dropdwn">
+                                        <li><a href="index.php">Home</a>
+                                            <!--<ul class="dropdwn">
                                                 <li>
                                                     <a href="index.html">Home Version 1</a>
                                                 </li>
@@ -128,9 +149,9 @@
                                                 <li>
                                                     <a href="index-10.html">Home 10 Boxed-2</a>
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                         </li>
-                                        <li class="mega-parent"><a href="#">elements</a>
+                                        <!--<li class="mega-parent"><a href="#">elements</a>
                                             <div class="mega-menu-area clearfix">
                                                 <div class="mega-menu-link mega-menu-link-4  f-left">
                                                     <ul class="single-mega-item">
@@ -448,21 +469,21 @@
                                                     <a href="single-blog.html">Blog Details</a>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li>-->
                                         <li>
-                                            <a href="about.html">About us</a>
+                                            <a href="about.php">About us</a>
                                         </li>
-                                        <li>
+                                        <!--<li>
                                             <a href="contact.html">Contact</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </nav>
                             </div>
                             <!-- header-search & total-cart -->
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <div class="search-top-cart  f-right">
+                            <!--<div class="col-md-2 col-sm-6 col-xs-12">
+                                <div class="search-top-cart  f-right">-->
                                     <!-- header-search -->
-                                    <div class="header-search f-left">
+                                    <!--<div class="header-search f-left">
                                         <div class="header-search-inner">
                                            <button class="search-toggle">
                                             <i class="zmdi zmdi-search"></i>
@@ -476,9 +497,9 @@
                                                 </div>
                                             </form> 
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- total-cart -->
-                                    <div class="total-cart f-left">
+                                    <!--<div class="total-cart f-left">
                                         <div class="total-cart-in">
                                             <div class="cart-toggler">
                                                 <a href="#">
@@ -495,9 +516,9 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <div class="total-cart-pro">
+                                                    <div class="total-cart-pro">-->
                                                         <!-- single-cart -->
-                                                        <div class="single-cart clearfix">
+                                                        <!--<div class="single-cart clearfix">
                                                             <div class="cart-img f-left">
                                                                 <a href="#">
                                                                     <img src="img/cart/1.jpg" alt="Cart Product" />
@@ -522,9 +543,9 @@
                                                                     <span>Color <strong>:</strong></span>Black, White
                                                                 </p>
                                                             </div>
-                                                        </div>
+                                                        </div>-->
                                                         <!-- single-cart -->
-                                                        <div class="single-cart clearfix">
+                                                        <!--<div class="single-cart clearfix">
                                                             <div class="cart-img f-left">
                                                                 <a href="#">
                                                                     <img src="img/cart/1.jpg" alt="Cart Product" />
@@ -578,7 +599,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -587,7 +608,7 @@
         <!-- END HEADER AREA -->
 
         <!-- START MOBILE MENU AREA -->
-        <div class="mobile-menu-area hidden-lg hidden-md">
+        <!--<div class="mobile-menu-area hidden-lg hidden-md">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -720,7 +741,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- END MOBILE MENU AREA -->
 
         <!-- BREADCRUMBS SETCTION START -->
@@ -730,9 +751,9 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="breadcrumbs-inner">
-                                <h1 class="breadcrumbs-title">My Account</h1>
+                                <h1 class="breadcrumbs-title"></h1>
                                 <ul class="breadcrumb-list">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li>My Account</li>
                                 </ul>
                             </div>
@@ -756,296 +777,65 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#personal_info">My Personal Information</a>
+                                            <a data-toggle="collapse" data-parent="#accordion2" href="#personal_info">Book Upload</a>
                                         </h4>
                                     </div>
                                     <div id="personal_info" class="panel-collapse collapse in" role="tabpanel">
                                         <div class="panel-body">
-                                            <form action="#">
+                                            <form action="book-upload.php" method="post" enctype="multipart/form-data" >
                                                 <div class="new-customers">
                                                     <div class="p-30">
                                                         <div class="row">
+                                                            <?php
+                                                                if(isset($_GET["err"]))
+                                                                {
+                                                                    switch ($_GET["err"]) {
+                                                                        case 1:
+                                                                            echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: Missing book information.</b></h5>";
+                                                                            break;
+                                                                        case 2:
+                                                                            echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: File uploaded is not an image (jpeg, jpg, png only).</b></h5>";
+                                                                            break;
+                                                                        case 3:
+                                                                            echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: File size too big.</b></h5>";
+                                                                            break;
+                                                                        case 4:
+                                                                            echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: Does not support image type (jpeg, jpg, png only).</b></h5>";
+                                                                            break;
+                                                                        case 5:
+                                                                            echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: Please try again.</b></h5>";
+                                                                            break;
+                                                                    }
+                                                                }
+                                                            ?>
                                                             <div class="col-sm-6">
-                                                                <input type="text"  placeholder="First Name">
+                                                                <input type="text" name="bookname" placeholder="Book Name">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <input type="text"  placeholder="last Name">
+                                                                <input type="text" name="author" placeholder="Author">
                                                             </div>
-                                                            <div class="col-sm-6">
-                                                                <select class="custom-select">
-                                                                    <option value="defalt">country</option>
-                                                                    <option value="c-1">Australia</option>
-                                                                    <option value="c-2">Bangladesh</option>
-                                                                    <option value="c-3">Unitd States</option>
-                                                                    <option value="c-4">Unitd Kingdom</option>
+                                                            <div class="col-sm-12">
+                                                                <label for="genre">Select genre:</label>
+                                                                <select class="custom-select" name="genre">
+                                                                    <option value="Tiểu thuyết">Tiểu thuyết</option>
+                                                                    <option value="Ngôn tình">Ngôn tình</option>
+                                                                    <option value="Trinh thám">Trinh thám</option>
+                                                                    <option value="Toán học">Toán học</option>
+                                                                    <option value="Phiêu lưu">Phiêu lưu</option>
+                                                                    <option value="Thiếu nhi">Thiếu nhi</option>
                                                                 </select>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <select class="custom-select">
-                                                                    <option value="defalt">State</option>
-                                                                    <option value="c-1">Melbourne</option>
-                                                                    <option value="c-2">Dhaka</option>
-                                                                    <option value="c-3">New York</option>
-                                                                    <option value="c-4">London</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <select class="custom-select">
-                                                                    <option value="defalt">Town/City</option>
-                                                                    <option value="c-1">Victoria</option>
-                                                                    <option value="c-2">Chittagong</option>
-                                                                    <option value="c-3">Boston</option>
-                                                                    <option value="c-4">Cambridge</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <input type="text"  placeholder="Phone here...">
                                                             </div>
                                                         </div>
-                                                        <input type="text"  placeholder="Company neme here...">
-                                                        <input type="text"  placeholder="Email address here...">
-                                                        <input type="password"  placeholder="Password">
-                                                        <input type="password"  placeholder="Confirm Password">
-                                                        <textarea class="custom-textarea" placeholder="Additional information..."></textarea>
-                                                        <div class="checkbox">
-                                                            <label class="mr-10"> 
-                                                                <small>
-                                                                    <input type="checkbox" name="signup">I wish to subscribe to the 69 Fashion newsletter.
-                                                                </small>
-                                                            </label>
-                                                            <br>
-                                                            <label> 
-                                                                <small>
-                                                                    <input type="checkbox" name="signup">I have read and agree to the <a href="#">Privacy Policy</a>
-                                                                </small>
-                                                            </label>
-                                                        </div>
+                                                        <textarea class="custom-textarea" placeholder="Book overview" name="overview"></textarea>
+                                                        <label for="book_image">Book image:</label>
+                                                        <input type="file" name="book_image" id="book_image" accept="image/*">
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Save</button>
+                                                                <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register" name="submit">Upload</button>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <button class="submit-btn-1 mt-20 btn-hover-1 f-right" type="reset">Clear</button>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- My shipping address -->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#my_shipping">My shipping address</a>
-                                        </h4>
-                                    </div>
-                                    <div id="my_shipping" class="panel-collapse collapse" role="tabpanel" >
-                                        <div class="panel-body">
-                                            <form action="#">
-                                                <div class="new-customers p-30">
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="First Name">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="last Name">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">country</option>
-                                                                <option value="c-1">Australia</option>
-                                                                <option value="c-2">Bangladesh</option>
-                                                                <option value="c-3">Unitd States</option>
-                                                                <option value="c-4">Unitd Kingdom</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">State</option>
-                                                                <option value="c-1">Melbourne</option>
-                                                                <option value="c-2">Dhaka</option>
-                                                                <option value="c-3">New York</option>
-                                                                <option value="c-4">London</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">Town/City</option>
-                                                                <option value="c-1">Victoria</option>
-                                                                <option value="c-2">Chittagong</option>
-                                                                <option value="c-3">Boston</option>
-                                                                <option value="c-4">Cambridge</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="Phone here...">
-                                                        </div>
-                                                    </div>
-                                                    <input type="text"  placeholder="Company neme here...">
-                                                    <input type="text"  placeholder="Email address here...">
-                                                    <textarea class="custom-textarea" placeholder="Additional information..."></textarea>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Save</button>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1 f-right" type="reset">Clear</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- My billing details -->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#billing_address">My billing details</a>
-                                        </h4>
-                                    </div>
-                                    <div id="billing_address" class="panel-collapse collapse" role="tabpanel" >
-                                        <div class="panel-body">
-                                            <form action="#">
-                                                <div class="billing-details p-30">
-                                                    <input type="text"  placeholder="Your Name Here...">
-                                                    <input type="text"  placeholder="Email address here...">
-                                                    <input type="text"  placeholder="Phone here...">
-                                                    <input type="text"  placeholder="Company neme here...">
-                                                    <select class="custom-select">
-                                                        <option value="defalt">country</option>
-                                                        <option value="c-1">Australia</option>
-                                                        <option value="c-2">Bangladesh</option>
-                                                        <option value="c-3">Unitd States</option>
-                                                        <option value="c-4">Unitd Kingdom</option>
-                                                    </select>
-                                                    <select class="custom-select">
-                                                        <option value="defalt">State</option>
-                                                        <option value="c-1">Melbourne</option>
-                                                        <option value="c-2">Dhaka</option>
-                                                        <option value="c-3">New York</option>
-                                                        <option value="c-4">London</option>
-                                                    </select>
-                                                    <select class="custom-select">
-                                                        <option value="defalt">Town/City</option>
-                                                        <option value="c-1">Victoria</option>
-                                                        <option value="c-2">Chittagong</option>
-                                                        <option value="c-3">Boston</option>
-                                                        <option value="c-4">Cambridge</option>
-                                                    </select>
-                                                    <textarea class="custom-textarea" placeholder="Your address here..."></textarea>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Save</button>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1 f-right" type="reset">Clear</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- My Order info -->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#My_order_info">My Order info</a>
-                                        </h4>
-                                    </div>
-                                    <div id="My_order_info" class="panel-collapse collapse" role="tabpanel" >
-                                        <div class="panel-body">
-                                            <form action="#">
-                                                <!-- our order -->
-                                                <div class="payment-details p-30">
-                                                    <table>
-                                                        <tr>
-                                                            <td class="td-title-1">Dummy Product Name x 2</td>
-                                                            <td class="td-title-2">$1855.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Dummy Product Name</td>
-                                                            <td class="td-title-2">$555.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Cart Subtotal</td>
-                                                            <td class="td-title-2">$2410.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Shipping and Handing</td>
-                                                            <td class="td-title-2">$15.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Vat</td>
-                                                            <td class="td-title-2">$00.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="order-total">Order Total</td>
-                                                            <td class="order-total-price">$2425.00</td>
-                                                        </tr>
-                                                    </table>
-                                                    <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Save</button>
-                                                </div> 
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Payment Method -->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#My_payment_method">Payment Method</a>
-                                        </h4>
-                                    </div>
-                                    <div id="My_payment_method" class="panel-collapse collapse" role="tabpanel" >
-                                        <div class="panel-body">
-                                            <form action="#">
-                                                <div class="new-customers p-30">
-                                                    <select class="custom-select">
-                                                        <option value="defalt">Card Type</option>
-                                                        <option value="c-1">Master Card</option>
-                                                        <option value="c-2">Paypal</option>
-                                                        <option value="c-3">Paypal</option>
-                                                        <option value="c-4">Paypal</option>
-                                                    </select>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="Card Number">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="Card Security Code">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">Month</option>
-                                                                <option value="c-1">January</option>
-                                                                <option value="c-2">February</option>
-                                                                <option value="c-3">March</option>
-                                                                <option value="c-4">April</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">Year</option>
-                                                                <option value="c-4">2017</option>
-                                                                <option value="c-1">2016</option>
-                                                                <option value="c-2">2015</option>
-                                                                <option value="c-3">2014</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">pay now</button>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">cancel order</button>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <button class="submit-btn-1 mt-20 f-right btn-hover-1" type="submit" value="register">continue</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1069,16 +859,20 @@
                     <div class="plr-185">
                         <div class="footer-top-inner gray-bg">
                             <div class="row">
-                                <div class="col-lg-4 col-md-5 col-sm-4">
+                                <div class="col-lg-7 col-md-5 col-sm-4">
                                     <div class="single-footer footer-about">
                                         <div class="footer-logo">
-                                            <img src="img/logo/logo.png" alt="">
+                                            <img src="img/logo/logo.png" alt="" width="200" height="80">
                                         </div>
                                         <div class="footer-brief">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the subas industry's standard dummy text ever since the 1500s,</p>
-                                            <p>When an unknown printer took a galley of type and If you are going to use a passage of Lorem Ipsum scrambled it to make.</p>
+                                            <p>Sign up now to become a member. We would love to meet you.</p>
+                                            <p>Being a member of BookMate means that:</p>
+                                            <p>- You can freely express your love for books.</p>
+                                            <p>- You have a chance to gain access to your desired books.</p>
+                                            <p>- You can find a like-minded friend to talk to.</p>
+                                            <p>- You can exchange books with another member who is near you.</p>
                                         </div>
-                                        <ul class="footer-social">
+                                        <!--<ul class="footer-social">
                                             <li>
                                                 <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                             </li>
@@ -1091,12 +885,12 @@
                                             <li>
                                                 <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
-                                <div class="col-lg-2 hidden-md hidden-sm">
+                                <div class="col-lg-3 hidden-md hidden-sm">
                                     <div class="single-footer">
-                                        <h4 class="footer-title border-left">Shipping</h4>
+                                        <!--<h4 class="footer-title border-left">Shipping</h4>
                                         <ul class="footer-menu">
                                             <li>
                                                 <a href="#"><i class="zmdi zmdi-circle"></i><span>New Products</span></a>
@@ -1119,35 +913,35 @@
                                             <li>
                                                 <a href="#"><i class="zmdi zmdi-circle"></i><span>Special Products</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-3 col-sm-4">
                                     <div class="single-footer">
-                                        <h4 class="footer-title border-left">my account</h4>
+                                        <!--<h4 class="footer-title border-left">my account</h4>
                                         <ul class="footer-menu">
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>My Account</span></a>
+                                                <a href="my-account.html"><i class="zmdi zmdi-circle"></i><span>My Account</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
+                                                <a href="wishlist.html"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
+                                                <a href="cart.html"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
+                                                <a href="login.html"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
+                                                <a href="login.html"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Check out</span></a>
+                                                <a href="checkout.html"><i class="zmdi zmdi-circle"></i><span>Check out</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="zmdi zmdi-circle"></i><span>Oder Complete</span></a>
+                                                <a href="order.html"><i class="zmdi zmdi-circle"></i><span>Oder Complete</span></a>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -1175,11 +969,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="copyright-text">
-                                        <p>&copy; <a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank">CodeCarnival</a> 2016. All Rights Reserved.</p>
+                                        <!--<p>&copy; <a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank">CodeCarnival</a> 2016. All Rights Reserved.</p>-->
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
-                                    <ul class="footer-payment text-right">
+                                    <!--<ul class="footer-payment text-right">
                                         <li>
                                             <a href="#"><img src="img/payment/1.jpg" alt=""></a>
                                         </li>
@@ -1192,7 +986,7 @@
                                         <li>
                                             <a href="#"><img src="img/payment/4.jpg" alt=""></a>
                                         </li>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                             </div>
                         </div>

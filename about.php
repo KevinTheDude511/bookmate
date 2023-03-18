@@ -34,6 +34,9 @@
 </head>
 
 <body>
+<?php
+    session_start();
+?>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->  
@@ -55,24 +58,36 @@
                         <div class="col-sm-6 col-xs-12">
                             <div class="top-link clearfix">
                                 <ul class="link f-right">
-                                    <li>
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>
-                                            My Account
-                                        </a>
-                                    </li>
+                                    <?php
+                                        if(isset($_SESSION["username"]))
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="my-account.php">
+                                                    <i class="zmdi zmdi-account"></i>
+                                                    My Account
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                        else
+                                        {
+                                            echo <<< EOT
+                                            <li>
+                                                <a href="login.php">
+                                                    <i class="zmdi zmdi-lock"></i>
+                                                    Login
+                                                </a>
+                                            </li>
+                                            EOT;
+                                        }
+                                    ?>
                                     <!--<li>
                                         <a href="wishlist.html">
                                             <i class="zmdi zmdi-favorite"></i>
                                             Wish List (0)
                                         </a>
                                     </li>-->
-                                    <li>
-                                        <a href="#">
-                                            <i class="zmdi zmdi-lock"></i>
-                                            Login
-                                        </a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
