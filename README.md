@@ -11,7 +11,7 @@ BookMate is created since we are aware of how disastrous the aforementioned prob
 ## Website
 Currently, our project is under development, so most of its features are not available yet. You can take a look at the detail of the books you want, upload (we mean offer) the books you have; however, you cannot request for the books you want. We are working on it, and we hope that we can release that feature in the near future, so stay tuned! 
 
-Below is a sneak peek to our website, BookMate. In case you want to explore it by yourself, [here is the link!](http://34.92.188.15/index.php)
+Below is a sneak peek to our website, BookMate. In case you want to explore it by yourself, [here is the link!](http://bookmate.site/index.php)
 
 | ![Home Page](https://user-images.githubusercontent.com/98366080/226150321-79f51513-7b66-4067-ad0a-988df216672c.png) |
 |:--:|
