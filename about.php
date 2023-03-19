@@ -102,7 +102,7 @@
                             <!-- logo -->
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img src="img/logo/logo.png" alt="main logo">
                                     </a>
                                 </div>
@@ -464,6 +464,9 @@
                                                 </li>
                                             </ul>
                                         </li>-->
+                                        <li>
+                                            <a href="books.php">Books</a>
+                                        </li>
                                         <li>
                                             <a href="about.php">About us</a>
                                         </li>

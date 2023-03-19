@@ -8,7 +8,7 @@
     }
     else
     {
-        if($_POST["username"] == $user && $_POST["password"] = $pass)
+        if($_POST["username"] == $user && $_POST["password"] == $pass)
         {
             $_SESSION["username"] = $_POST["username"];
             $_SESSION["userID"] = 1;

@@ -466,6 +466,9 @@ session_start();
                                             </ul>
                                         </li>-->
                                         <li>
+                                            <a href="books.php">Books</a>
+                                        </li>
+                                        <li>
                                             <a href="about.php">About us</a>
                                         </li>
                                         <!--<li>
