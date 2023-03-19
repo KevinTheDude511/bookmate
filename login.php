@@ -450,6 +450,9 @@
                                             </ul>
                                         </li>-->
                                         <li>
+                                            <a href="books.php">Books</a>
+                                        </li>
+                                        <li>
                                             <a href="about.html">About us</a>
                                         </li>
                                         <!--<li>
@@ -755,11 +758,11 @@
                                 <h6 class="widget-title border-left mb-50">LOGIN</h6>
                                 <form action="login-verify.php" method="post" >
                                     <div class="login-account p-30 box-shadow">
-                                        <p>If you have an account with us, Please log in.</p>
+                                        <p>If you have an account with us, please log in.</p>
                                         <?php
                                             if(isset($_GET["err"]))
                                             {
-                                                echo "<p>Wrong username or password, please try again.</p>";
+                                                echo "<h5><b>Wrong username or password, please try again.</b></h5>";
                                             }
                                         ?>
                                         <input type="text" name="username" placeholder="Username">
@@ -773,17 +776,39 @@
                         <!-- new-customers -->
                         <div class="col-md-6">
                             <div class="new-customers">
-                                <form action="#">
+                                <form action="register.php" method="post">
                                     <h6 class="widget-title border-left mb-50">NEW BOOKMATE</h6>
                                     <div class="login-account p-30 box-shadow">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <input type="text"  placeholder="First Name">
+                                        <p>If you don't have an account, you can register for free.</p>
+                                        <?php
+                                            if(isset($_GET["regfail"]))
+                                            {
+                                                switch ($_GET["regfail"]) 
+                                                {
+                                                    case 1:
+                                                        echo "<h5><b>Missing username or password, please try again.</b></h5>";
+                                                        break;
+                                                    case 2:
+                                                        echo "<h5><b>Password doesn't match, please try again.</b></h5>";
+                                                        break;
+                                                    case 3:
+                                                        echo "<h5><b>Email has been registered, please try again.</b></h5>";
+                                                        break;
+                                                    case 4:
+                                                        echo "<h5><b>Something went wrong, please try again.</b></h5>";
+                                                        break;
+                                                }
+                                            }
+                                            else if(isset($_GET["regsuccess"]))
+                                            {
+                                                echo "<h5><b>Register successful, please login.</b></h5>";
+                                            }
+                                        ?>
+                                        <!--<div class="row">
+                                            <div class="col-sm-12">
+                                                <input type="email" placeholder="Email address here..." name="email" >
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text"  placeholder="last Name">
-                                            </div>
-                                            <!--<div class="col-sm-6">
                                                 <select class="custom-select">
                                                     <option value="defalt">country</option>
                                                     <option value="c-1">Australia</option>
@@ -800,8 +825,8 @@
                                                     <option value="c-3">New York</option>
                                                     <option value="c-4">London</option>
                                                 </select>
-                                            </div>-->
-                                            <!--<div class="col-sm-6">
+                                            </div>
+                                            <div class="col-sm-6">
                                                 <select class="custom-select">
                                                     <option value="defalt">Town/City</option>
                                                     <option value="c-1">Victoria</option>
@@ -812,12 +837,12 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text"  placeholder="Phone here...">
-                                            </div>-->
-                                        </div>
-                                        <!--<input type="text"  placeholder="Company neme here...">-->
-                                        <input type="text"  placeholder="Email address here...">
-                                        <input type="password"  placeholder="Password">
-                                        <input type="password"  placeholder="Confirm Password">
+                                            </div>
+                                        </div>-->
+                                        <input type="text" placeholder="Email" name="email">
+                                        <input type="text" placeholder="Username" name="username">
+                                        <input type="password"  placeholder="Password" name="password">
+                                        <input type="password"  placeholder="Confirm Password" name="confirm_password">
                                         <!--<div class="checkbox">
                                             <label class="mr-10"> 
                                                 <small>
