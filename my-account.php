@@ -35,6 +35,7 @@
 
 <body>
 <?php
+    include("connect.php");
     session_start();
 ?>
     <!--[if lt IE 8]>
@@ -817,12 +818,13 @@
                                                             <div class="col-sm-12">
                                                                 <label for="genre">Select genre:</label>
                                                                 <select class="custom-select" name="genre">
-                                                                    <option value="Tiểu thuyết">Tiểu thuyết</option>
-                                                                    <option value="Ngôn tình">Ngôn tình</option>
-                                                                    <option value="Trinh thám">Trinh thám</option>
-                                                                    <option value="Toán học">Toán học</option>
-                                                                    <option value="Phiêu lưu">Phiêu lưu</option>
-                                                                    <option value="Thiếu nhi">Thiếu nhi</option>
+                                                                <?php
+                                                                    $genre_get_query = mysqli_query($link, "SELECT * FROM genre");
+                                                                    while($genre_get = mysqli_fetch_array($genre_get_query))
+                                                                    {
+                                                                ?>
+                                                                    <option value="<?php echo $genre_get["genreID"]; ?>"><?php echo $genre_get["bookGenre"]; ?></option>
+                                                                <?php }?>
                                                                 </select>
                                                             </div>
                                                         </div>
