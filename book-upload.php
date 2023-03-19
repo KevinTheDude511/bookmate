@@ -42,7 +42,7 @@
         }
         else
         {
-            header("Location: my-account.php?err=5");
+            header("Location: my-account.php?err=6");
         }
     }
     else

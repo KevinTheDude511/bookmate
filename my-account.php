@@ -807,6 +807,9 @@
                                                                             echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: Does not support image type (jpeg, jpg, png only).</b></h5>";
                                                                             break;
                                                                         case 5:
+                                                                            echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: Cannot upload image.</b></h5>";
+                                                                            break;
+                                                                        case 6:
                                                                             echo "<h5><b>&nbsp;&nbsp;&nbsp;&nbsp; Error: Please try again.</b></h5>";
                                                                             break;
                                                                     }
