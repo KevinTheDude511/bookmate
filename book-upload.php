@@ -36,13 +36,13 @@
         if (move_uploaded_file($_FILES["book_image"]["tmp_name"], $target_file)) header("Location: my-account.php");
         else header("Location: my-account.php?err=5");
 
-        if(mysqli_query($link, "INSERT INTO book (name, uploadDate, overview, genre, imgURL, author, uploadUser) values('$name', '$date', '$overview', '$genre', '$target_file', '$author', '$username')"))
+        if(mysqli_query($link, "INSERT INTO book (genreID, name, uploadDate, overview, imgURL, author, uploadUser) values($genre, '$name', '$date', '$overview', '$target_file', '$author', '$username')"))
         {
-            header("Location: my-account.php?lmao=2");
+            header("Location: my-account.php?success=1");
         }
         else
         {
-            header("Location: my-account.php?err=5&lmao=1");
+            header("Location: my-account.php?err=5");
         }
     }
     else
